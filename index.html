@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icons/icon.png">
+    <title>Ultanza</title>
+    <script defer>
+        window.addEventListener('scroll', function(){
+            const navbarPos = window.scrollY;
+            if(navbarPos > 10){
+                document.getElementsByClassName('navbar')[0].classList.add('nav_mini');
+            }else{
+                document.getElementsByClassName('navbar')[0].classList.remove('nav_mini');
+            }
+        });
+    </script>
+</head>
+<body class="body">
+
+    <nav class="navbar">
+        <ul class="sidebar">
+            <li onclick="hideSidebar()" class="nav_close"><a href="#">&times;</a></li>
+            <li onclick="hideSidebar()"><a title="Перемещение по сайту" href="#home"><span>Дом</span></a></li>
+            <li onclick="hideSidebar()"><a title="Перемещение по сайту" href="#ourGames"><span>Наши игры</span></a></li>
+            <li onclick="hideSidebar()"><a title="Перемещение по сайту" href="#gamesInDevelopment"><span>Игры в разроботке</span></a></li>
+            <li onclick="hideSidebar()"><a title="Перемещение по сайту" href="#Support"><span>Поддержка</span></a></li>
+        </ul>
+        <ul>
+            <li><img src="icons/icon.png" class="shadow"></li>
+            <li class="hideOnMobile"><a title="Перемещение по сайту" href="#home"><span>Дом</span></a></li>
+            <li class="hideOnMobile"><a title="Перемещение по сайту" href="#ourGames"><span>Наши игры</span></a></li>
+            <li class="hideOnMobile"><a title="Перемещение по сайту" href="#gamesInDevelopment"><span>Игры в разроботке</span></a></li>
+            <li class="hideOnMobile"><a title="Перемещение по сайту" href="#Support"><span>Поддержка</span></a></li>
+            <li><h2>Ultanza</h2></li>
+            <li class="menu-button" onclick="showSidebar()" class="nav_open"><a href="#">&#9776;</a></li>
+        </ul>
+    </nav>
+
+    <div class="main">
+        <img src="icons/logo.png" id="home" title="Ultanza">
+        <h4>Добро пожаловать в <span>Ultanza</span> 👋</h4>
+        <p class="title">Добро пожаловать на официальный сайт разработчиков игр Ultanza!</p>
+        <p class="subtitle"> 
+            Мы — творческая команда, вдохновленная стремлением создавать 
+            захватывающие и уникальные игровые миры. Наша цель — подарить 
+            игрокам незабываемые впечатления и заставить их увлеченно 
+            погружаться в наши проекты. Игры Ultanza — это сочетание 
+            качественной графики, захватывающего сюжета и инновационных игровых 
+            механик. Оставайтесь с нами, чтобы быть в курсе последних новостей 
+            и анонсов наших будущих проектов. Добро пожаловать в мир <span>Ultanza!</span>
+        </p>
+    </div>
+
+    <h5 class="seprator" id="ourGames">Наши игры:</h5>
+    <section class="guarantee" id="warehouse" title="Открыть описание"></section>
+
+    <h5 class="seprator" id="gamesInDevelopment">Игры в разработке:</h5>
+    <section class="guarantee" id="warehouse-test" title="Открыть описание"></section>
+
+    <section id="informationStorageLocation"></section>
+
+    <template id="cardTemplate">
+        <section class="item">
+            <div class="icon">
+                <img src="">
+                <h3></h3>
+            </div>
+            <div class="bottom">
+                <i class='bx bx-chevron-right'></i>
+            </div>
+        </section>
+    </template>
+
+    <template id="descriptionWindows">
+        <div id="openModalWindow">
+            <section class="close" title="Закрыть описание" id="closeModalWindow">&times;</section>
+            <div class="info">
+                <img id="img" src="">
+                <h3 id="h3"></h3>
+                <p>
+                    <spn id="spanDescriptionPos"></spn>
+                    Если у вас есть вопросы, обращайтесь в <a href="#Support" title="Перейти в поддержку" class="info-a" class="close" id="supportCloseModal">Поддержку</a>.
+                </p>
+                <div class="button__modal" id="loremPos"></div>
+            </div>
+        </div>
+    </template>
+
+    <template id="spanDescription">
+        <b class="heading">Об игре</b><br>
+        <span></span>
+        <br><br>
+    </template>
+
+    <template id="button">
+        <a target="_blank" id="link"><button class="hire-btn" id="button"></button></a>
+    </template>
+
+    <footer>
+        <div class="cols">
+            <div class="about-col">
+                <h3>Ultanza</h3>
+            </div>
+
+            <div class="links-col">
+                <h4>Ссылки на сайте:</h4>
+                <a title="Перемещение по сайту" href="#home">Дом</a>
+                <a title="Перемещение по сайту" href="#ourGames">Наши игры</a>
+                <a title="Перемещение по сайту" href="#gamesInDevelopment">Игры в разроботке</a>
+                <a title="Перемещение по сайту" href="#Support">Поддержка</a>
+            </div>
+
+            <div class="links-col">
+                <h4 id="Support">Поддержка:</h4>
+                <a id="clickboard" target="_blank" href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJvlqhhJCNXWJzTwKgtqVlpBJLxxdsXKJJWtnzqsqSlzfqFrCxmBcdPzFvbWSgfMKhkXWrg" class="links-col-a">ultanzastudio@gmail.com&#128279;</a>
+            </div>
+        </div>
+    </footer>
+
+    <main class="container">
+        <div class="alert alert-success" id="successMessage"><p>Текст скопирован</p></div>
+    </main>
+
+    <script src="database.js"></script>
+    
+    <script type="module">
+        
+        console.log(arrey);
+        for(let i = 0; i < arrey.length; i++){
+            spanDescriptionPos.textContent = '';
+            for(let j = 0; j < arrey[i]['Heading'].length; j++){
+                spanDescriptionB.textContent = (arrey[i]['Heading'][j]);
+                spanDescriptionSpan.textContent = (arrey[i]['Text'][j])
+                console.log(arrey[i]['Heading'][j]);
+                copySpanDescription = spanDescription.content.cloneNode(true);
+                spanDescriptionPos.append(copySpanDescription);
+            }
+            pos = true;
+            if((arrey[i]['ID']) === '#test'){pos = false;}
+            img.src = (arrey[i]['Logo']);
+            imgDescription.src = (arrey[i]['Logo']);
+            h3.textContent = (arrey[i]['NameApp']);
+            h3Description.textContent = (arrey[i]['NameApp']);
+            onclick.setAttribute('onclick', `openModal(${idOpenModal++})`);
+            openModalWindow.setAttribute('class', `about modal-${classOpenModal}`);
+            closeModalWindow.setAttribute('onclick', `closeModal(${classOpenModal})`);
+            supportCloseModalDescription.setAttribute('onclick', `closeModal(${classOpenModal++})`);
+            loremPos.textContent = '';
+            for(let k = 0; k < arrey[i]['RefDescription'].length; k++){
+                buttonLink.setAttribute('title', (arrey[i]['RefDescription'][k]));
+                buttonLink.setAttribute('href', (arrey[i]['RefLink'][k]));
+                buttonButton.textContent = (arrey[i]['RefTitle'][k]);
+                copyButton = button.content.cloneNode(true);
+                loremPos.append(copyButton);
+            }
+            if(pos){
+                copyLocation = description.content.cloneNode(true);
+                l.append(copyLocation);
+                copyCard = canvas.content.cloneNode(true);
+                card.append(copyCard);
+            }else if(!pos){
+                copyLocation = description.content.cloneNode(true);
+                l.append(copyLocation);
+                copyCard = canvas.content.cloneNode(true);
+                cardTest.append(copyCard);
+            }
+        }
+        </script>
+
+        <script src="script.js"></script>
+
+</body>
+</html>
